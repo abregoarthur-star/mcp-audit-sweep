@@ -91,8 +91,15 @@ The private `REPORT-full.md` with per-finding evidence is `.gitignored` and live
 
 MIT — see [LICENSE](./LICENSE).
 
-## See also
+## Related tools
 
-- [`@dj_abstract/mcp-audit`](https://www.npmjs.com/package/@dj_abstract/mcp-audit) — the auditor itself
-- [`abregoarthur-star/mcp-audit`](https://github.com/abregoarthur-star/mcp-audit) — auditor source
-- [`abregoarthur-star/prompt-eval`](https://github.com/abregoarthur-star/prompt-eval) — companion runtime prompt-injection eval harness
+Part of a **detect → inventory → test → generate → defend** pipeline for AI-agent security:
+
+| Layer | Tool | Role |
+|---|---|---|
+| Detect | [`@dj_abstract/mcp-audit`](https://github.com/abregoarthur-star/mcp-audit) | Static auditor (what this sweep exercises) |
+| Detect | **mcp-audit-sweep** *(you are here)* | Reproducible sweep of public MCP servers |
+| Inventory | [`@dj_abstract/agent-capability-inventory`](https://github.com/abregoarthur-star/agent-capability-inventory) | Fleet-wide tool catalog with data-sensitivity tags |
+| Test | [`prompt-eval`](https://github.com/abregoarthur-star/prompt-eval) | Runtime prompt-injection eval harness |
+| Generate | [`@dj_abstract/prompt-genesis`](https://github.com/abregoarthur-star/prompt-genesis) | Attack corpus generator (feeds prompt-eval) |
+| Defend | [`@dj_abstract/agent-firewall`](https://github.com/abregoarthur-star/agent-firewall) | Call-time defensive middleware |

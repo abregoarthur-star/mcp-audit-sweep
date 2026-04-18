@@ -1,6 +1,7 @@
 node_modules/
 *.log
 .DS_Store
+~$*
 
 # Vendor source clones — pulled fresh via scripts/fetch-sources.sh
 servers/

@@ -7,7 +7,7 @@
 Reproducible static security audit of public **Model Context Protocol** servers. Uses [`@dj_abstract/mcp-audit`](https://www.npmjs.com/package/@dj_abstract/mcp-audit) to check tool definitions for prompt injection, tool poisoning, unsafe capability combinations, sensitive-output leakage, and other AI-native security issues.
 
 **Results:** [REPORT.md](./REPORT.md) — 30 servers, 184 tools, aggregate counts.
-Specific finding evidence is held pending responsible disclosure to maintainers.
+Specific finding evidence is held pending responsible disclosure to maintainers — see the [DISCLOSURE.md](./DISCLOSURE.md) tracker for the per-finding lifecycle.
 
 ## Why
 

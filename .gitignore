@@ -12,4 +12,9 @@ sb-mcp/
 REPORT-full.md
 REPORT-full.docx
 reports/audits/
+reports/diffs/
+reports/diff-summary.json
 disclosures/
+# baselines/ IS tracked — snapshot of audit surfaces at a point in time,
+# so future sweeps can diff against them and catch silent changes
+# (new tools, widened permissions, description edits = "rug pulls").

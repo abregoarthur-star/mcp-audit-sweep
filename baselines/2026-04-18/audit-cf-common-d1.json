@@ -1,0 +1,48 @@
+{
+  "auditedAt": "2026-04-18T07:05:31.935Z",
+  "server": {
+    "name": "reports/manifest-cf-common-d1.json",
+    "version": null,
+    "transport": "manifest"
+  },
+  "tools": [
+    {
+      "name": "d1_databases_list",
+      "description": "List all of the D1 databases in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "d1_database_create",
+      "description": "Create a new D1 database in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "d1_database_delete",
+      "description": "Delete a d1 database in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "d1_database_get",
+      "description": "Get a D1 database in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "d1_database_query",
+      "description": "Query a D1 database in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "_note": "Structural snapshot only. Findings withheld pending coordinated disclosure — see DISCLOSURE.md."
+}

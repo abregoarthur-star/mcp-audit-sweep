@@ -7,7 +7,8 @@
   "scripts": {
     "fetch": "./scripts/fetch-sources.sh",
     "sweep": "./scripts/run-sweep.sh",
-    "report": "node build-report.mjs"
+    "report": "node build-report.mjs",
+    "diff": "./scripts/diff-sweep.sh"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,12 @@
+{
+  "auditedAt": "2026-04-18T07:05:46.188Z",
+  "server": {
+    "name": "reports/manifest-sb-docs-tools.json",
+    "version": null,
+    "transport": "manifest"
+  },
+  "tools": [],
+  "resources": [],
+  "prompts": [],
+  "_note": "Structural snapshot only. Findings withheld pending coordinated disclosure — see DISCLOSURE.md."
+}

@@ -1,0 +1,27 @@
+{
+  "auditedAt": "2026-04-18T07:05:31.325Z",
+  "server": {
+    "name": "reports/manifest-cf-common-account.json",
+    "version": null,
+    "transport": "manifest"
+  },
+  "tools": [
+    {
+      "name": "accounts_list",
+      "description": "List all accounts in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "set_active_account",
+      "description": "Set active account to be used for tool calls that require accountId",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "_note": "Structural snapshot only. Findings withheld pending coordinated disclosure — see DISCLOSURE.md."
+}

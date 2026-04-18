@@ -1,0 +1,41 @@
+{
+  "auditedAt": "2026-04-18T07:05:33.756Z",
+  "server": {
+    "name": "reports/manifest-cf-common-hyperdrive.json",
+    "version": null,
+    "transport": "manifest"
+  },
+  "tools": [
+    {
+      "name": "hyperdrive_configs_list",
+      "description": "List Hyperdrive configurations in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "hyperdrive_config_delete",
+      "description": "Delete a Hyperdrive configuration in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "hyperdrive_config_get",
+      "description": "Get details of a specific Hyperdrive configuration in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "hyperdrive_config_edit",
+      "description": "Edit (patch) a Hyperdrive configuration in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "_note": "Structural snapshot only. Findings withheld pending coordinated disclosure — see DISCLOSURE.md."
+}

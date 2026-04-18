@@ -1,0 +1,27 @@
+{
+  "auditedAt": "2026-04-18T07:05:36.223Z",
+  "server": {
+    "name": "reports/manifest-cf-common-zone.json",
+    "version": null,
+    "transport": "manifest"
+  },
+  "tools": [
+    {
+      "name": "zones_list",
+      "description": "List all zones under a Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "zone_details",
+      "description": "Get details for a specific Cloudflare zone",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "_note": "Structural snapshot only. Findings withheld pending coordinated disclosure — see DISCLOSURE.md."
+}

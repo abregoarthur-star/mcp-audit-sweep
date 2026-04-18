@@ -1,0 +1,27 @@
+{
+  "auditedAt": "2026-04-18T07:05:44.935Z",
+  "server": {
+    "name": "reports/manifest-sb-debugging-tools.json",
+    "version": null,
+    "transport": "manifest"
+  },
+  "tools": [
+    {
+      "name": "get_logs",
+      "description": "Gets logs for a Supabase project by service type. Use this to help debug problems with your app. This will return logs within the last 24 hours.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_advisors",
+      "description": "Gets a list of advisory notices for the Supabase project. Use this to check for security vulnerabilities or performance improvements. Include the remediation URL as a clickable link so that the user can reference the issue themselves. It's recommended to run this tool regularly, especially after making DDL changes to the database since it will catch things like missing RLS policies.",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "_note": "Structural snapshot only. Findings withheld pending coordinated disclosure — see DISCLOSURE.md."
+}

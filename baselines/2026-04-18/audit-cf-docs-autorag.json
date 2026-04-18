@@ -1,0 +1,20 @@
+{
+  "auditedAt": "2026-04-18T07:05:36.819Z",
+  "server": {
+    "name": "reports/manifest-cf-docs-autorag.json",
+    "version": null,
+    "transport": "manifest"
+  },
+  "tools": [
+    {
+      "name": "search_cloudflare_documentation",
+      "description": "Search the Cloudflare documentation.\n\n\t\tYou should use this tool when:\n\t\t- A user asks questions about Cloudflare products (Workers, Developer Platform, Zero Trust, CDN, etc)\n\t\t- A user requests information about a Cloudflare feature\n\t\t- You are unsure of how to use some Cloudflare functionality\n\t\t- You are writing Cloudflare Workers code and need to look up Workers-specific documentation\n\n\t\tThis tool returns a number of results from a vector database. These are embedded as resources in the response and are plaintext documents in a variety of formats.\n\t\t",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "_note": "Structural snapshot only. Findings withheld pending coordinated disclosure — see DISCLOSURE.md."
+}

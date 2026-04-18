@@ -1,0 +1,41 @@
+{
+  "auditedAt": "2026-04-18T07:05:34.999Z",
+  "server": {
+    "name": "reports/manifest-cf-common-r2_bucket.json",
+    "version": null,
+    "transport": "manifest"
+  },
+  "tools": [
+    {
+      "name": "r2_buckets_list",
+      "description": "List r2 buckets in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "r2_bucket_create",
+      "description": "Create a new r2 bucket in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "r2_bucket_get",
+      "description": "Get details about a specific R2 bucket",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "r2_bucket_delete",
+      "description": "Delete an R2 bucket",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "_note": "Structural snapshot only. Findings withheld pending coordinated disclosure — see DISCLOSURE.md."
+}

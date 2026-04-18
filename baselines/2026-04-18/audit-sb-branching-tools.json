@@ -1,0 +1,55 @@
+{
+  "auditedAt": "2026-04-18T07:05:43.660Z",
+  "server": {
+    "name": "reports/manifest-sb-branching-tools.json",
+    "version": null,
+    "transport": "manifest"
+  },
+  "tools": [
+    {
+      "name": "create_branch",
+      "description": "Creates a development branch on a Supabase project. This will apply all migrations from the main project to a fresh branch database. Note that production data will not carry over. The branch will get its own project_id via the resulting project_ref. Use this ID to execute queries and migrations on the branch.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_branches",
+      "description": "Lists all development branches of a Supabase project. This will return branch details including status which you can use to check when operations like merge/rebase/reset complete.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_branch",
+      "description": "Deletes a development branch.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "merge_branch",
+      "description": "Merges migrations and edge functions from a development branch to production.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "reset_branch",
+      "description": "Resets migrations of a development branch. Any untracked data or schema changes will be lost.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "rebase_branch",
+      "description": "Rebases a development branch on production. This will effectively run any newer migrations from production onto this branch to help handle migration drift.",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "_note": "Structural snapshot only. Findings withheld pending coordinated disclosure — see DISCLOSURE.md."
+}

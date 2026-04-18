@@ -1,0 +1,27 @@
+{
+  "auditedAt": "2026-04-18T07:05:35.587Z",
+  "server": {
+    "name": "reports/manifest-cf-common-worker.json",
+    "version": null,
+    "transport": "manifest"
+  },
+  "tools": [
+    {
+      "name": "workers_get_worker",
+      "description": "Get the details of the Cloudflare Worker.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "workers_get_worker_code",
+      "description": "Get the source code of a Cloudflare Worker. Note: This may be a bundled version of the worker.",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "_note": "Structural snapshot only. Findings withheld pending coordinated disclosure — see DISCLOSURE.md."
+}

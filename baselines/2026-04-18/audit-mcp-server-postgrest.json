@@ -1,0 +1,12 @@
+{
+  "auditedAt": "2026-04-18T07:05:41.197Z",
+  "server": {
+    "name": "reports/manifest-mcp-server-postgrest.json",
+    "version": null,
+    "transport": "manifest"
+  },
+  "tools": [],
+  "resources": [],
+  "prompts": [],
+  "_note": "Structural snapshot only. Findings withheld pending coordinated disclosure — see DISCLOSURE.md."
+}

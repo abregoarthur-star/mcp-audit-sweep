@@ -1,0 +1,45 @@
+{
+  "server": {
+    "name": "cf-mcp-common-d1",
+    "source": "cf-mcp/packages/mcp-common/src/tools/d1.tools.ts"
+  },
+  "tools": [
+    {
+      "name": "d1_databases_list",
+      "description": "List all of the D1 databases in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "d1_database_create",
+      "description": "Create a new D1 database in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "d1_database_delete",
+      "description": "Delete a d1 database in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "d1_database_get",
+      "description": "Get a D1 database in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "d1_database_query",
+      "description": "Query a D1 database in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": []
+}

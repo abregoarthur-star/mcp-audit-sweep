@@ -1,0 +1,31 @@
+{
+  "server": {
+    "name": "cf-browser-rendering",
+    "source": "cf-mcp/apps/browser-rendering"
+  },
+  "tools": [
+    {
+      "name": "get_url_html_content",
+      "description": "Get page HTML content",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_url_markdown",
+      "description": "Get page converted into Markdown",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_url_screenshot",
+      "description": "Get page screenshot",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": []
+}

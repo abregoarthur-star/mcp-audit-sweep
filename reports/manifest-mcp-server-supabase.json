@@ -1,0 +1,9 @@
+{
+  "server": {
+    "name": "sb-mcp-server-supabase",
+    "source": "sb-mcp/packages/mcp-server-supabase"
+  },
+  "tools": [],
+  "resources": [],
+  "prompts": []
+}

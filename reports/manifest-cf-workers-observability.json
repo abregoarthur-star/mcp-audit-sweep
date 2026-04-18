@@ -1,0 +1,31 @@
+{
+  "server": {
+    "name": "cf-workers-observability",
+    "source": "cf-mcp/apps/workers-observability"
+  },
+  "tools": [
+    {
+      "name": "query_worker_observability",
+      "description": "Query the Workers Observability API to analyze logs and metrics from your Cloudflare Workers.\n\n\t* A query typical query looks like this:\n\t\t\t\t{\"view\":\"events\",\"queryId\":\"workers-logs-events\",\"limit\":5,\"dry\":true,\"parameters\":{\"datasets\":[\"cloudflare-workers\"],\"filters\":[{\"id\":\"520\",\"key\":\"message\",\"operation\":\"eq\",\"type\":\"string\",\"value\":\"Clickhouse Statistics\"},{\"id\":\"2088\",\"key\":\"statistics.elapsed\",\"operation\":\"gt\",\"type\":\"number\",\"value\":\"0.269481519\"}],\"calculations\":[],\"groupBys\":[],\"havings\":[]},\"timeframe\":{\"to\":\"2025-04-30T20:53:15Z\",\"from\":\" \"\"2025-04-30T19:53:15Z\"}}\n## Core Capabilities\nThis tool provides three primary views of your Worker data:\n1. **List Events** - Browse individual request logs and errors\n2. **Calculate Metrics** - Compute statistics across requests (avg, p99, etc.)\n3. **Find Specific Invocations** - Locate individual requests matching criteria\n\n## Filtering Best Practices\n- Before applying filters, use the observability_keys and observability_values tools to confirm available filter fields and the correct filter value to add unless you have the data in a response from a previous query.\n- Common filter fields:  $metadata.service, $metadata.trigger, $metadata.message, $metadata.level, $metadata.requestId,\n\n## Calculation Best Practices\n- Before applying calculations, use the observability_keys tools to confirm key that should be used for the calculation\n\n## Troubleshooting\n- If no results are returned, suggest broadening the time range or relaxing filters\n- For errors about invalid fields, recommend using observability_keys to see available options\n",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "observability_keys",
+      "description": "Find keys in the Workers Observability Data\n\n## Best Practices\n- Set a high limit (1000+) to ensure you see all available keys\n- Add the $metadata.service filter to narrow results to a specific Worker\n\n## Troubleshooting\n- If expected fields are missing, verify the Worker is actively logging\n- For empty results, try broadening your time range\n",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "observability_values",
+      "description": "Find values in the Workers Observability Data.\n\n## Troubleshooting\n- For no results, verify the field exists using observability_keys first\n- If expected values are missing, try broadening your time range",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": []
+}

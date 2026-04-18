@@ -1,0 +1,31 @@
+{
+  "server": {
+    "name": "sb-storage-tools",
+    "source": "sb-mcp/packages/mcp-server-supabase/src/tools/storage-tools.ts"
+  },
+  "tools": [
+    {
+      "name": "list_storage_buckets",
+      "description": "Lists all storage buckets in a Supabase project.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_storage_config",
+      "description": "Get the storage config for a Supabase project.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "update_storage_config",
+      "description": "Update the storage config for a Supabase project.",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": []
+}

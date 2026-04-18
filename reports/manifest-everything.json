@@ -1,0 +1,146 @@
+{
+  "server": {
+    "name": "mcp-everything",
+    "source": "servers/src/everything"
+  },
+  "tools": [
+    {
+      "name": "echo",
+      "title": "Echo Tool",
+      "description": "Echoes back the input string",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-annotated-message",
+      "title": "Get Annotated Message Tool",
+      "description": "Demonstrates how annotations can be used to provide metadata about content.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-env",
+      "title": "Print Environment Tool",
+      "description": "Returns all environment variables, helpful for debugging MCP server configuration",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-resource-links",
+      "title": "Get Resource Links Tool",
+      "description": "Returns up to ten resource links that reference different types of resources",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-resource-reference",
+      "title": "Get Resource Reference Tool",
+      "description": "Returns a resource reference that can be used by MCP clients",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-roots-list",
+      "title": "Get Roots List Tool",
+      "description": "Lists the current MCP roots provided by the client. Demonstrates the roots protocol capability even though this server doesn't access files.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-structured-content",
+      "title": "Get Structured Content Tool",
+      "description": "Returns structured content along with an output schema for client data validation",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-sum",
+      "title": "Get Sum Tool",
+      "description": "Returns the sum of two numbers",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-tiny-image",
+      "title": "Get Tiny Image Tool",
+      "description": "Returns a tiny MCP logo image.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "gzip-file-as-resource",
+      "title": "GZip File as Resource Tool",
+      "description": "Compresses a single file using gzip compression. Depending upon the selected output type, returns either the compressed data as a gzipped resource or a resource link, allowing it to be downloaded in a subsequent request during the current session.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "toggle-simulated-logging",
+      "title": "Toggle Simulated Logging",
+      "description": "Toggles simulated, random-leveled logging on or off.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "toggle-subscriber-updates",
+      "title": "Toggle Subscriber Updates",
+      "description": "Toggles simulated resource subscription updates on or off.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "trigger-elicitation-request-async",
+      "title": "Trigger Async Elicitation Request Tool",
+      "description": "Trigger an async elicitation request that the CLIENT executes as a background task. Demonstrates bidirectional MCP tasks where the server sends an elicitation request and the client handles user input asynchronously, allowing the server to poll for completion.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "trigger-elicitation-request",
+      "title": "Trigger Elicitation Request Tool",
+      "description": "Trigger a Request from the Server for User Elicitation",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "trigger-long-running-operation",
+      "title": "Trigger Long Running Operation Tool",
+      "description": "Demonstrates a long running operation with progress updates.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "trigger-sampling-request-async",
+      "title": "Trigger Async Sampling Request Tool",
+      "description": "Trigger an async sampling request that the CLIENT executes as a background task. Demonstrates bidirectional MCP tasks where the server sends a request and the client executes it asynchronously, allowing the server to poll for progress and results.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "trigger-sampling-request",
+      "title": "Trigger Sampling Request Tool",
+      "description": "Trigger a Request from the Server for LLM Sampling",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": []
+}

@@ -1,0 +1,24 @@
+{
+  "server": {
+    "name": "cf-mcp-common-zone",
+    "source": "cf-mcp/packages/mcp-common/src/tools/zone.tools.ts"
+  },
+  "tools": [
+    {
+      "name": "zones_list",
+      "description": "List all zones under a Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "zone_details",
+      "description": "Get details for a specific Cloudflare zone",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": []
+}

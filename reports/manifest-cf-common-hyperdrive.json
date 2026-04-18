@@ -1,0 +1,38 @@
+{
+  "server": {
+    "name": "cf-mcp-common-hyperdrive",
+    "source": "cf-mcp/packages/mcp-common/src/tools/hyperdrive.tools.ts"
+  },
+  "tools": [
+    {
+      "name": "hyperdrive_configs_list",
+      "description": "List Hyperdrive configurations in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "hyperdrive_config_delete",
+      "description": "Delete a Hyperdrive configuration in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "hyperdrive_config_get",
+      "description": "Get details of a specific Hyperdrive configuration in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "hyperdrive_config_edit",
+      "description": "Edit (patch) a Hyperdrive configuration in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": []
+}

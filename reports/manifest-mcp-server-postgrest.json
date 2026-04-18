@@ -1,0 +1,9 @@
+{
+  "server": {
+    "name": "sb-mcp-server-postgrest",
+    "source": "sb-mcp/packages/mcp-server-postgrest"
+  },
+  "tools": [],
+  "resources": [],
+  "prompts": []
+}

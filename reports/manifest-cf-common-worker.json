@@ -1,0 +1,24 @@
+{
+  "server": {
+    "name": "cf-mcp-common-worker",
+    "source": "cf-mcp/packages/mcp-common/src/tools/worker.tools.ts"
+  },
+  "tools": [
+    {
+      "name": "workers_get_worker",
+      "description": "Get the details of the Cloudflare Worker.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "workers_get_worker_code",
+      "description": "Get the source code of a Cloudflare Worker. Note: This may be a bundled version of the worker.",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": []
+}

@@ -1,0 +1,9 @@
+{
+  "server": {
+    "name": "sb-docs-tools",
+    "source": "sb-mcp/packages/mcp-server-supabase/src/tools/docs-tools.ts"
+  },
+  "tools": [],
+  "resources": [],
+  "prompts": []
+}

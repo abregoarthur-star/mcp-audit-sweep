@@ -1,0 +1,472 @@
+{
+  "server": {
+    "name": "cf-radar",
+    "source": "cf-mcp/apps/radar"
+  },
+  "tools": [
+    {
+      "name": "list_autonomous_systems",
+      "description": "List Autonomous Systems",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_as_details",
+      "description": "Get Autonomous System details by ASN",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_ip_details",
+      "description": "Get IP address information including full ASN details (name, country, population estimates from APNIC).",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_traffic_anomalies",
+      "description": "Get traffic anomalies and outages",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_internet_services_ranking",
+      "description": "Get top Internet services",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_domains_ranking",
+      "description": "Get top or trending domains",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_domain_rank_details",
+      "description": "Get domain rank details",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_http_data",
+      "description": "Retrieve HTTP traffic trends.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_dns_queries_data",
+      "description": "Retrieve trends in DNS queries to the 1.1.1.1 resolver.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_l7_attack_data",
+      "description": "Retrieve application layer (L7) attack trends.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_l3_attack_data",
+      "description": "Retrieve network layer (L3/DDoS) attack trends.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_email_routing_data",
+      "description": "Retrieve Email Routing trends.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_email_security_data",
+      "description": "Retrieve Email Security trends.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_internet_speed_data",
+      "description": "Retrieve summary of bandwidth, latency, jitter, and packet loss, from the previous 90 days of Cloudflare Speed Test.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_internet_quality_data",
+      "description": "Retrieves a summary or time series of bandwidth, latency, or DNS response time percentiles from the Radar Internet Quality Index (IQI).",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_ai_data",
+      "description": "Retrieves AI-related data, including traffic from AI user agents, as well as popular models and model tasks specifically from Cloudflare Workers AI.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_bgp_hijacks",
+      "description": "Retrieve BGP hijack events. BGP hijacks occur when an AS announces routes it does not own, potentially redirecting traffic.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_bgp_leaks",
+      "description": "Retrieve BGP route leak events. Route leaks occur when an AS improperly announces routes learned from one peer to another.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_bgp_route_stats",
+      "description": "Retrieve BGP routing table statistics including number of routes, origin ASes, and more.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_bots_data",
+      "description": "Retrieve bot traffic data including trends by bot name, operator, category, and kind. Covers AI crawlers, search engines, monitoring bots, and more.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_certificate_transparency_data",
+      "description": "Retrieve Certificate Transparency (CT) log data. CT provides visibility into SSL/TLS certificates issued for domains, useful for security monitoring.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_netflows_data",
+      "description": "Retrieve NetFlows traffic data showing network traffic patterns. Supports filtering by ADM1 (administrative level 1, e.g., states/provinces) via geoId.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_origins",
+      "description": "List cloud provider origins (hyperscalers) available in Cloud Observatory. Returns Amazon (AWS), Google (GCP), Microsoft (Azure), and Oracle (OCI) with their available regions.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_origin_details",
+      "description": "Get details for a specific cloud provider origin, including all available regions.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_origins_data",
+      "description": "Retrieve cloud provider (AWS, GCP, Azure, OCI) performance metrics. Supports timeseries, summaries grouped by region/success_rate/percentile, and grouped timeseries.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_robots_txt_data",
+      "description": "Retrieve robots.txt analysis data. Shows how websites configure crawler access rules, particularly for AI crawlers. Useful for understanding web crawler policies across domains.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_bots_crawlers_data",
+      "description": "Retrieve web crawler HTTP request data. Shows crawler traffic patterns by client type, user agent, referrer, and industry. Useful for analyzing crawler behavior and traffic distribution.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_bots",
+      "description": "List known bots with their details. Includes AI crawlers, search engines, monitoring bots, and more. Filter by category, operator, kind, or verification status.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_bot_details",
+      "description": "Get detailed information about a specific bot by its slug identifier.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_leaked_credentials_data",
+      "description": "Retrieve trends in HTTP authentication requests and compromised credential detection. Shows distribution by compromised status and bot class.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_as112_data",
+      "description": "Retrieve AS112 DNS sink hole data. AS112 handles reverse DNS lookups for private IP addresses (RFC 1918). Useful for analyzing DNS misconfiguration patterns.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_geolocations",
+      "description": "List available geolocations (ADM1 - administrative divisions like states/provinces). Use this to find GeoNames IDs for filtering HTTP and NetFlows data by region.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_geolocation_details",
+      "description": "Get details for a specific geolocation by its GeoNames ID.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_tcp_resets_timeouts_data",
+      "description": "Retrieve TCP connection quality metrics including resets and timeouts. Useful for understanding connection reliability across networks and locations.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_annotations",
+      "description": "Retrieve annotations including Internet events, outages, and anomalies from various Cloudflare data sources.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_outages",
+      "description": "Retrieve Internet outages and anomalies. Provides information about detected connectivity issues across ASes and locations.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_ct_authorities",
+      "description": "List Certificate Authorities (CAs) tracked in Certificate Transparency logs.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_ct_authority_details",
+      "description": "Get details for a specific Certificate Authority by its SHA256 fingerprint.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_ct_logs",
+      "description": "List Certificate Transparency logs.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_ct_log_details",
+      "description": "Get details for a specific Certificate Transparency log by its slug.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_bgp_timeseries",
+      "description": "Retrieve BGP updates time series data. Shows BGP announcement and withdrawal patterns over time.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_bgp_top_ases",
+      "description": "Get top Autonomous Systems by BGP update count.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_bgp_top_prefixes",
+      "description": "Get top IP prefixes by BGP update count.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_bgp_moas",
+      "description": "Get Multi-Origin AS (MOAS) prefixes. MOAS occurs when a prefix is announced by multiple ASes, which can indicate hijacking or legitimate anycast.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_bgp_pfx2as",
+      "description": "Get prefix-to-ASN mapping. Useful for looking up which AS announces a given IP prefix.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_bgp_ip_space_timeseries",
+      "description": "Retrieve announced IP address space time series data. Shows the count of announced IPv4 /24s and IPv6 /48s over time. Essential for monitoring BGP route withdrawals, IPv6 address space changes, and detecting significant routing events by ASN or country.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_bgp_routes_realtime",
+      "description": "Get real-time BGP routes for a specific IP prefix using public route collectors (RouteViews and RIPE RIS). Shows current routing state including AS paths, RPKI validation status, and visibility across peers. Useful for troubleshooting routing issues and verifying route announcements.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_as_set",
+      "description": "Get IRR AS-SETs that an Autonomous System is a member of. AS-SETs are used in routing policies.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_as_relationships",
+      "description": "Get AS-level relationships for an Autonomous System. Shows peer, upstream, and downstream relationships with other ASes.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_tlds",
+      "description": "List top-level domains (TLDs) including generic, country-code, and sponsored TLDs. Filter by type or manager.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_tld_details",
+      "description": "Get detailed information about a specific top-level domain (TLD).",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_domains_ranking_timeseries",
+      "description": "Get domain ranking timeseries data. Track how specific domains rank over time.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_speed_histogram",
+      "description": "Get speed test histogram data. Shows distribution of speed test results for bandwidth, latency, or jitter.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_internet_services_timeseries",
+      "description": "Track internet service ranking changes over time. Useful for monitoring how services like ChatGPT, Google, etc. rank over time.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_outages_by_location",
+      "description": "Get outage counts aggregated by location. Useful for identifying which countries have the most Internet outages.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_traffic_anomalies_by_location",
+      "description": "Get traffic anomalies aggregated by location. Shows which countries have the most detected outage signals, automatically detected by Radar.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_bgp_routing_table_ases",
+      "description": "List all ASes in global routing tables with routing statistics (prefix counts, IPv4/IPv6 address count, RPKI validation status). Data comes from public BGP MRT archives.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_bgp_top_ases_by_prefixes",
+      "description": "Get top ASes ordered by announced prefix count. Useful for understanding which networks have the largest routing footprint. Data comes from public BGP MRT archives and updates every 2 hours.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_bgp_rpki_aspa_snapshot",
+      "description": "Retrieve a snapshot of current or historical RPKI ASPA (Autonomous System Provider Authorization) objects. ASPA objects define which ASNs are authorized upstream providers for a customer ASN, helping prevent route leaks and hijacks.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_bgp_rpki_aspa_changes",
+      "description": "Retrieve RPKI ASPA changes over time, including additions, removals, and modifications of ASPA objects.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_bgp_rpki_aspa_timeseries",
+      "description": "Retrieve a timeseries of RPKI ASPA object counts over time.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "search_url_scans",
+      "description": "Search URL scans using ElasticSearch-like query syntax. Examples: 'page.domain:example.com', 'verdicts.malicious:true', 'page.asn:AS24940 AND hash:xxx', 'apikey:me AND date:[2025-01 TO 2025-02]'",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_url_scan",
+      "description": "Submit a URL to scan. Returns the scan UUID which can be used to retrieve results.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_url_scan",
+      "description": "Get the results of a URL scan by its UUID. Returns detailed information including verdicts, page info, requests, cookies, and more.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_url_scan_screenshot",
+      "description": "Get the screenshot URL for a completed scan.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_url_scan_har",
+      "description": "Get the HAR (HTTP Archive) data for a completed scan. Contains detailed network request/response information.",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": []
+}

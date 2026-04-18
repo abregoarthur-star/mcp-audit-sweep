@@ -1,0 +1,38 @@
+{
+  "server": {
+    "name": "cf-mcp-common-r2_bucket",
+    "source": "cf-mcp/packages/mcp-common/src/tools/r2_bucket.tools.ts"
+  },
+  "tools": [
+    {
+      "name": "r2_buckets_list",
+      "description": "List r2 buckets in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "r2_bucket_create",
+      "description": "Create a new r2 bucket in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "r2_bucket_get",
+      "description": "Get details about a specific R2 bucket",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "r2_bucket_delete",
+      "description": "Delete an R2 bucket",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": []
+}

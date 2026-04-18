@@ -1,0 +1,45 @@
+{
+  "server": {
+    "name": "cf-ai-gateway",
+    "source": "cf-mcp/apps/ai-gateway"
+  },
+  "tools": [
+    {
+      "name": "list_gateways",
+      "description": "List Gateways",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_logs",
+      "description": "List Logs",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_log_details",
+      "description": "Get a single Log details",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_log_request_body",
+      "description": "Get Log Request Body",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_log_response_body",
+      "description": "Get Log Response Body",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": []
+}

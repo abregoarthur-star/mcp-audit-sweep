@@ -1,0 +1,24 @@
+{
+  "server": {
+    "name": "cf-mcp-common-account",
+    "source": "cf-mcp/packages/mcp-common/src/tools/account.tools.ts"
+  },
+  "tools": [
+    {
+      "name": "accounts_list",
+      "description": "List all accounts in your Cloudflare account",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "set_active_account",
+      "description": "Set active account to be used for tool calls that require accountId",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": []
+}

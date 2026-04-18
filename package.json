@@ -1,0 +1,21 @@
+{
+  "name": "mcp-audit-sweep",
+  "version": "0.1.0",
+  "description": "Reproducible static security audit of public Model Context Protocol servers, powered by @dj_abstract/mcp-audit",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "fetch": "./scripts/fetch-sources.sh",
+    "sweep": "./scripts/run-sweep.sh",
+    "report": "node build-report.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abregoarthur-star/mcp-audit-sweep.git"
+  },
+  "author": "Arthur Abrego",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}

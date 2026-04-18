@@ -1,0 +1,9 @@
+{
+  "server": {
+    "name": "cf-workers-bindings",
+    "source": "cf-mcp/apps/workers-bindings"
+  },
+  "tools": [],
+  "resources": [],
+  "prompts": []
+}

@@ -1,0 +1,73 @@
+{
+  "server": {
+    "name": "sb-account-tools",
+    "source": "sb-mcp/packages/mcp-server-supabase/src/tools/account-tools.ts"
+  },
+  "tools": [
+    {
+      "name": "list_organizations",
+      "description": "Lists all organizations that the user is a member of.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_organization",
+      "description": "Gets details for an organization. Includes subscription plan.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_projects",
+      "description": "Lists all Supabase projects for the user. Use this to help discover the project ID of the project that the user is working on.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_project",
+      "description": "Gets details for a Supabase project.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_cost",
+      "description": "Gets the cost of creating a new project or branch. Never assume organization as costs can be different for each. Always repeat the cost to the user and confirm their understanding before proceeding.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "confirm_cost",
+      "description": "Ask the user to confirm their understanding of the cost of creating a new project or branch. Call `get_cost` first. Returns a unique ID for this confirmation which should be passed to `create_project` or `create_branch`.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_project",
+      "description": "Creates a new Supabase project. Always ask the user which organization to create the project in. The project can take a few minutes to initialize - use `get_project` to check the status.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "pause_project",
+      "description": "Pauses a Supabase project.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "restore_project",
+      "description": "Restores a Supabase project.",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": []
+}

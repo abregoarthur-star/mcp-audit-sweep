@@ -4,16 +4,17 @@ This file tracks the lifecycle of every finding from the [MCP Security Sweep](./
 
 | ID | Server | Severity | Reported | Status | Public ETA |
 |----|--------|----------|----------|--------|-----------|
-| MCP-SWEEP-001 | `everything` (modelcontextprotocol/servers) | high | 2026-04-17 | Reported | 2026-07-16 |
-| MCP-SWEEP-002 | `memory` (modelcontextprotocol/servers) | medium | 2026-04-17 | Reported | 2026-07-16 |
-| MCP-SWEEP-003 | `memory` (modelcontextprotocol/servers) | medium | 2026-04-17 | Reported | 2026-07-16 |
-| MCP-SWEEP-004 | `memory` (modelcontextprotocol/servers) | medium | 2026-04-17 | Reported | 2026-07-16 |
-| MCP-SWEEP-005 | `sb-branching-tools` (Supabase MCP) | medium | 2026-04-17 | Reported | 2026-07-16 |
-| MCP-SWEEP-006 | `sb-branching-tools` (Supabase MCP) | medium | 2026-04-17 | Reported | 2026-07-16 |
+| MCP-SWEEP-001 | `everything` (modelcontextprotocol/servers) | high | — | Queued | TBD |
+| MCP-SWEEP-002 | `memory` (modelcontextprotocol/servers) | medium | — | Queued | TBD |
+| MCP-SWEEP-003 | `memory` (modelcontextprotocol/servers) | medium | — | Queued | TBD |
+| MCP-SWEEP-004 | `memory` (modelcontextprotocol/servers) | medium | — | Queued | TBD |
+| MCP-SWEEP-005 | `sb-branching-tools` (Supabase MCP) | medium | — | Queued | TBD |
+| MCP-SWEEP-006 | `sb-branching-tools` (Supabase MCP) | medium | — | Queued | TBD |
 
 ## Status definitions
 
-- **Reported** — initial notification delivered to the maintainer's documented security contact
+- **Queued** — finding is drafted and awaiting outbound notification
+- **Reported** — initial notification delivered to the maintainer's documented security contact; 90-day clock started
 - **Acknowledged** — maintainer has confirmed receipt
 - **Triaged** — maintainer agrees the finding is valid and is working on a fix
 - **Disputed** — maintainer believes the finding is intended behavior or out of scope

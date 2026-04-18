@@ -167,4 +167,17 @@ writeFileSync(new URL('./REPORT-full.md', import.meta.url).pathname, full);
 
 console.log(`✓ REPORT.md       (public, aggregate)`);
 console.log(`✓ REPORT-full.md  (private, evidence) — .gitignored`);
+
+// ---- optional .docx export via pandoc ----
+import { spawnSync } from 'node:child_process';
+const pandoc = spawnSync('which', ['pandoc']);
+if (pandoc.status === 0) {
+  for (const base of ['REPORT', 'REPORT-full']) {
+    const r = spawnSync('pandoc', [`${base}.md`, '-o', `${base}.docx`, '--toc', '--toc-depth=2'], { cwd: new URL('./', import.meta.url).pathname });
+    if (r.status === 0) console.log(`✓ ${base}.docx`);
+  }
+} else {
+  console.log('  (pandoc not installed — skipping .docx export; install with `brew install pandoc`)');
+}
+
 console.log(`  ${total.servers} servers · ${total.tools} tools · ${total.critical}C / ${total.high}H / ${total.medium}M`);

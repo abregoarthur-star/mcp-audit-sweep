@@ -8,8 +8,8 @@ This file tracks the lifecycle of every finding from the [MCP Security Sweep](./
 | MCP-SWEEP-002 | `memory` (modelcontextprotocol/servers) | medium | 2026-04-18 | Reported | 2026-07-17 |
 | MCP-SWEEP-003 | `memory` (modelcontextprotocol/servers) | medium | 2026-04-18 | Reported | 2026-07-17 |
 | MCP-SWEEP-004 | `memory` (modelcontextprotocol/servers) | medium | 2026-04-18 | Reported | 2026-07-17 |
-| MCP-SWEEP-005 | `sb-branching-tools` (Supabase MCP) | medium | — | Queued | TBD |
-| MCP-SWEEP-006 | `sb-branching-tools` (Supabase MCP) | medium | — | Queued | TBD |
+| MCP-SWEEP-005 | `sb-branching-tools` (Supabase MCP) | medium | 2026-04-18 | Reported | 2026-07-17 |
+| MCP-SWEEP-006 | `sb-branching-tools` (Supabase MCP) | medium | 2026-04-18 | Reported | 2026-07-17 |
 
 ## Status definitions
 

@@ -1,0 +1,98 @@
+name: Self-audit — mcp-audit-action end-to-end
+
+# Validates the mcp-audit-action against real MCP server manifests
+# (the sweep's own baselines). Proves the full chain works:
+#   npm package → Action → SARIF → GitHub Security tab.
+#
+# Runs on:
+#   - manual dispatch (for initial validation after new mcp-audit-action tags)
+#   - PR changes to baselines/ (self-test any future baseline churn)
+#   - weekly schedule (catches npm-package or action regressions)
+
+on:
+  workflow_dispatch:
+    inputs:
+      action-ref:
+        description: 'Ref of mcp-audit-action to test (tag, branch, or SHA). Default: main.'
+        required: false
+        default: 'main'
+      fail-on:
+        description: 'Minimum severity that fails the job.'
+        required: false
+        default: 'critical'
+        type: choice
+        options: [critical, high, medium, low]
+  pull_request:
+    paths:
+      - 'baselines/**'
+      - '.github/workflows/self-audit.yml'
+  schedule:
+    # Mondays 09:00 UTC — catches upstream regressions (new mcp-audit version
+    # publishing with a broken SARIF shape, GitHub SARIF-subset changes, etc.)
+    - cron: '0 9 * * 1'
+
+permissions:
+  contents: read
+  security-events: write   # required so SARIF reaches the Security tab
+
+jobs:
+  audit-everything:
+    name: audit @ modelcontextprotocol/servers — everything
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Pick a baseline that we KNOW produces findings (MCP-SWEEP-001 lived
+      # here — "get-env" lethal-trifecta). Re-auditing it verifies:
+      #   1. The Action executes end-to-end
+      #   2. SARIF is emitted
+      #   3. SARIF passes GitHub's subset validation
+      #   4. Findings appear in the Security tab
+      - name: Audit `everything` server
+        id: audit
+        uses: abregoarthur-star/mcp-audit-action@${{ inputs.action-ref || 'main' }}
+        with:
+          manifest: ./baselines/2026-04-18/audit-everything.json
+          fail-on: ${{ inputs.fail-on || 'critical' }}
+          sarif-file: everything.sarif
+          # Action pulls @dj_abstract/mcp-audit@latest by default.
+          # Pin here if you want deterministic runs.
+          mcp-audit-version: latest
+
+      - name: Report counts
+        if: always()
+        run: |
+          echo "::notice::everything — findings=${{ steps.audit.outputs.finding-count }} critical=${{ steps.audit.outputs.critical-count }} high=${{ steps.audit.outputs.high-count }}"
+
+  audit-memory:
+    name: audit @ modelcontextprotocol/servers — memory
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Audit `memory` server
+        id: audit
+        uses: abregoarthur-star/mcp-audit-action@${{ inputs.action-ref || 'main' }}
+        with:
+          manifest: ./baselines/2026-04-18/audit-memory.json
+          fail-on: ${{ inputs.fail-on || 'critical' }}
+          sarif-file: memory.sarif
+
+      - if: always()
+        run: |
+          echo "::notice::memory — findings=${{ steps.audit.outputs.finding-count }} critical=${{ steps.audit.outputs.critical-count }} high=${{ steps.audit.outputs.high-count }}"
+
+  summary:
+    needs: [audit-everything, audit-memory]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Self-audit summary
+        run: |
+          echo "## Self-audit run" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- \`everything\`: ${{ needs.audit-everything.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- \`memory\`: ${{ needs.audit-memory.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Findings surfaced at: https://github.com/${{ github.repository }}/security/code-scanning" >> $GITHUB_STEP_SUMMARY

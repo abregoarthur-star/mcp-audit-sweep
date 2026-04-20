@@ -51,10 +51,10 @@ jobs:
       #   4. Findings appear in the Security tab
       - name: Audit `everything` server
         id: audit
-        uses: abregoarthur-star/mcp-audit-action@${{ inputs.action-ref || 'main' }}
+        uses: abregoarthur-star/mcp-audit-action@${{ github.event.inputs.action-ref || 'main' }}
         with:
           manifest: ./baselines/2026-04-18/audit-everything.json
-          fail-on: ${{ inputs.fail-on || 'critical' }}
+          fail-on: ${{ github.event.inputs.fail-on || 'critical' }}
           sarif-file: everything.sarif
           # Action pulls @dj_abstract/mcp-audit@latest by default.
           # Pin here if you want deterministic runs.
@@ -73,10 +73,10 @@ jobs:
 
       - name: Audit `memory` server
         id: audit
-        uses: abregoarthur-star/mcp-audit-action@${{ inputs.action-ref || 'main' }}
+        uses: abregoarthur-star/mcp-audit-action@${{ github.event.inputs.action-ref || 'main' }}
         with:
           manifest: ./baselines/2026-04-18/audit-memory.json
-          fail-on: ${{ inputs.fail-on || 'critical' }}
+          fail-on: ${{ github.event.inputs.fail-on || 'critical' }}
           sarif-file: memory.sarif
 
       - if: always()

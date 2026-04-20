@@ -12,10 +12,6 @@ name: Self-audit — mcp-audit-action end-to-end
 on:
   workflow_dispatch:
     inputs:
-      action-ref:
-        description: 'Ref of mcp-audit-action to test (tag, branch, or SHA). Default: main.'
-        required: false
-        default: 'main'
       fail-on:
         description: 'Minimum severity that fails the job.'
         required: false
@@ -51,7 +47,7 @@ jobs:
       #   4. Findings appear in the Security tab
       - name: Audit `everything` server
         id: audit
-        uses: abregoarthur-star/mcp-audit-action@${{ github.event.inputs.action-ref || 'main' }}
+        uses: abregoarthur-star/mcp-audit-action@main
         with:
           manifest: ./baselines/2026-04-18/audit-everything.json
           fail-on: ${{ github.event.inputs.fail-on || 'critical' }}
@@ -73,7 +69,7 @@ jobs:
 
       - name: Audit `memory` server
         id: audit
-        uses: abregoarthur-star/mcp-audit-action@${{ github.event.inputs.action-ref || 'main' }}
+        uses: abregoarthur-star/mcp-audit-action@main
         with:
           manifest: ./baselines/2026-04-18/audit-memory.json
           fail-on: ${{ github.event.inputs.fail-on || 'critical' }}

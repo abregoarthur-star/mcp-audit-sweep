@@ -28,7 +28,7 @@ Rules applied:
 | `excessive-scope` | medium | single server spanning many unrelated capability domains |
 
 
-## Aggregate results
+## Aggregate results — Round 1 (2026-04-18)
 
 | Metric | Count |
 |---|---|
@@ -39,7 +39,29 @@ Rules applied:
 | **Medium** findings | 5 |
 | Low findings | 0 |
 
-## Per-server surface
+## Aggregate results — Round 2 (2026-06-04)
+
+Six additional MCP servers spanning a different vendor mix: a major cloud platform, a Microsoft developer-infrastructure surface, search & retrieval, and Hugging Face. Selection focused on TS-AST-extractable servers with permissive licenses and active commit history. See `scripts/fetch-round-2.sh` for the pinned commit list.
+
+| Metric | Count |
+|---|---|
+| Servers audited | 6 |
+| Tools audited | 145 |
+| **Critical** findings | 0 |
+| **High** findings | 2 |
+| **Medium** findings | 1 |
+| Low findings | 0 |
+
+Round 2 findings are tracked in [`DISCLOSURE.md`](./DISCLOSURE.md) as `MCP-SWEEP-007..009` and are currently in **Queued** status pending maintainer notification.
+
+### Two ecosystem observations from Round 2
+
+Worth flagging publicly even before the per-finding disclosure windows close:
+
+1. **Remote-MCP proxy shells.** Several high-profile vendors (Stripe, Atlassian, Neon, Notion) now ship their MCP server as a thin proxy that fetches its tool list from `mcp.<vendor>.com` at runtime. The published repo has no tool source code to audit. Static analysis is impossible by design — the agent surface is unknowable until runtime. This pattern shifts the entire audit problem to the remote endpoint, which may or may not be inspectable by customers.
+2. **Language fragmentation.** The most-popular Slack, GitHub, AWS, Grafana, Elasticsearch, and Atlassian MCP servers are written in Python, Go, or Rust — none of which the current TS-AST extractor walks. A Python-AST extension would unlock 3–4 additional high-stakes audit targets in the next round.
+
+## Per-server surface — Round 1 (2026-04-18)
 
 | Server | Tools | C | H | M |
 |---|---:|---:|---:|---:|
@@ -74,6 +96,19 @@ Rules applied:
 | `mcp-server-supabase` | 0 | 0 | 0 | 0 |
 | `sb-docs-tools` | 0 | 0 | 0 | 0 |
 
+
+## Per-server surface — Round 2 (2026-06-04)
+
+| Server | Tools | C | H | M |
+|---|---:|---:|---:|---:|
+| `azure-devops-mcp` | 91 | 0 | 1 | 1 |
+| `heroku-mcp` | 38 | 0 | 1 | 0 |
+| `exa-mcp` | 8 | 0 | 0 | 0 |
+| `brave-search-mcp` | 6 | 0 | 0 | 0 |
+| `context7-mcp` | 2 | 0 | 0 | 0 |
+| `hf-mcp` | 0* | 0 | 0 | 0 |
+
+*Hugging Face uses a `*_TOOL_CONFIG` per-file constant pattern the current TS-AST extractor doesn't walk. Extractor patch will reattempt this server in a follow-up.
 
 ## Findings (disclosure-gated)
 

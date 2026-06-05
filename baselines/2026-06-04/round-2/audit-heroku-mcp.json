@@ -1,0 +1,298 @@
+{
+  "auditedAt": "2026-06-05T05:56:08.263Z",
+  "server": {
+    "name": "reports/round-2/manifest-heroku-mcp.json",
+    "version": null,
+    "transport": "manifest",
+    "url": null,
+    "auth": {
+      "kind": "unknown"
+    },
+    "counts": {
+      "tools": 38,
+      "resources": 0,
+      "prompts": 0
+    }
+  },
+  "tools": [
+    {
+      "name": "list_addons",
+      "description": "List add-ons: all apps or specific app, detailed metadata",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_addon_info",
+      "description": "Get add-on details: plan, state, billing",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_addon",
+      "description": "Create add-on: specify service, plan, custom names",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_addon_services",
+      "description": "List available add-on services and features",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_addon_plans",
+      "description": "List service plans: features, pricing, availability",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_ai_available_models",
+      "description": "List available AI inference models",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "provision_ai_model",
+      "description": "Provision AI model access for app",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "make_ai_inference",
+      "description": "Make inference request to Heroku AI API",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_apps",
+      "description": "List Heroku apps: owned, collaborator access, team/space filtering",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_app_info",
+      "description": "Get app details: config, dynos, addons, access, domains",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_app",
+      "description": "Create app: custom name, region (US/EU), team, private space",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "rename_app",
+      "description": "Rename app: validate and update app name",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "pg_psql",
+      "description": "Execute SQL queries: analyze, debug, modify schema, manage data",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "pg_info",
+      "description": "View database status: config, metrics, resources, health",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "pg_ps",
+      "description": "Monitor active queries: progress, resources, performance",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "pg_locks",
+      "description": "Analyze locks: blocked queries, deadlocks, concurrency",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "pg_outliers",
+      "description": "Find resource-heavy queries: performance, patterns, optimization",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "pg_credentials",
+      "description": "Manage access: credentials, permissions, security, monitoring",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "pg_kill",
+      "description": "Stop processes: stuck queries, blocking transactions, runaway operations",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "pg_maintenance",
+      "description": "Track maintenance: windows, schedules, progress, planning",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "pg_backups",
+      "description": "Manage backups: schedules, status, verification, recovery",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "pg_upgrade",
+      "description": "Upgrade PostgreSQL: version migration, compatibility, safety",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "deploy_to_heroku",
+      "description": "Use for all deployments. Deploys new/existing apps, with or without teams/spaces, and env vars to Heroku. Ask for app name if missing. Requires valid app.json via appJson param.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "deploy_one_off_dyno",
+      "description": "\nRun code/commands in Heroku one-off dyno with network and filesystem access.\n\nRequirements:\n- Show command output\n- Use app_info for buildpack detection\n- Support shell setup commands\n- Use stdout/stderr\n\nFeatures:\n- Network/filesystem access\n- Environment variables\n- File operations\n- Temp directory handling\n\nUsage:\n1. Use Heroku runtime\n2. Proper syntax/imports\n3. Organized code structure\n4. Package management:\n   - Define dependencies\n   - Minimize external deps\n   - Prefer native modules\n\nExample package.json:\n```json\n{\n  \"type\": \"module\",\n  \"dependencies\": {\n    \"axios\": \"^1.6.0\"\n  }\n}\n```\n",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_app_logs",
+      "description": "App logs: monitor/debug/filter by dyno/process/source",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "maintenance_on",
+      "description": "Enable maintenance mode and redirect traffic for a Heroku app",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "maintenance_off",
+      "description": "Disable maintenance mode and restore normal app operations",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "pipelines_create",
+      "description": "Creates new Heroku deployment pipeline with configurable stages, apps, and team settings",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "pipelines_promote",
+      "description": "Promotes apps between pipeline stages with configurable target applications",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "pipelines_list",
+      "description": "Lists accessible Heroku pipelines with ownership and configuration details",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "pipelines_info",
+      "description": "Displays detailed pipeline configuration, stages, and connected applications",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "pipelines",
+      "description": "Lists and manages Heroku pipelines with configuration visibility",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "ps_list",
+      "description": "List and monitor Heroku app dynos. View running dynos, check status/health, monitor process states, verify configurations.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "ps_scale",
+      "description": "Scale Heroku app dynos. Adjust quantities, change sizes, view formation details, manage resources.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "ps_restart",
+      "description": "Restart Heroku app processes. Restart specific dynos, process types, or all dynos. Reset dyno states selectively.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_private_spaces",
+      "description": "Lists Heroku Private Spaces with CIDR blocks, regions, compliance and capacity details. JSON output supported.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_teams",
+      "description": "Lists accessible Heroku Teams. Use for: viewing teams, checking membership, getting team metadata, and verifying access. JSON output available.",
+      "inputSchema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "test_tool",
+      "description": "Test description",
+      "inputSchema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "prompts": [],
+  "findings": [],
+  "summary": {
+    "total": 1,
+    "bySeverity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0,
+      "info": 0
+    }
+  }
+}

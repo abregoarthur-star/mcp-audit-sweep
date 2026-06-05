@@ -10,6 +10,9 @@ This file tracks the lifecycle of every finding from the [MCP Security Sweep](./
 | MCP-SWEEP-004 | `memory` (modelcontextprotocol/servers) | medium | 2026-04-18 | Reported | 2026-07-17 |
 | MCP-SWEEP-005 | `sb-branching-tools` (Supabase MCP) | medium | 2026-04-18 | Reported | 2026-07-17 |
 | MCP-SWEEP-006 | `sb-branching-tools` (Supabase MCP) | medium | 2026-04-18 | Reported | 2026-07-17 |
+| MCP-SWEEP-007 | `heroku-mcp` (Heroku) | high | — | Queued | 90d after report |
+| MCP-SWEEP-008 | `azure-devops-mcp` (Microsoft) | high | — | Queued | 90d after report |
+| MCP-SWEEP-009 | `azure-devops-mcp` (Microsoft) | medium | — | Queued | 90d after report |
 
 ## Status definitions
 
@@ -36,6 +39,8 @@ Findings that match an actively exploited pattern in the wild may be disclosed e
 | Anthropic / `modelcontextprotocol/servers` | [`SECURITY.md`](https://github.com/modelcontextprotocol/servers/security) — GitHub private vulnerability disclosure |
 | Supabase | [security@supabase.io](mailto:security@supabase.io) (per their public security policy) |
 | Cloudflare | [hackerone.com/cloudflare](https://hackerone.com/cloudflare) |
+| Heroku / Salesforce | [hackerone.com/heroku](https://hackerone.com/heroku) (per Heroku's public security policy) |
+| Microsoft (Azure DevOps) | [MSRC](https://msrc.microsoft.com/report) — Microsoft Security Response Center |
 
 ## Updates
 

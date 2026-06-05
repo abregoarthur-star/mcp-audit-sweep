@@ -3,10 +3,11 @@ node_modules/
 .DS_Store
 ~$*
 
-# Vendor source clones — pulled fresh via scripts/fetch-sources.sh
+# Vendor source clones — pulled fresh via scripts/fetch-sources.sh + scripts/fetch-round-2.sh
 servers/
 cf-mcp/
 sb-mcp/
+round-2-sources/
 
 # Full finding details held until responsible disclosure closes
 REPORT-full.md
@@ -14,7 +15,13 @@ REPORT-full.docx
 reports/audits/
 reports/diffs/
 reports/diff-summary.json
+reports/round-2/audits/
+reports/round-2/SUMMARY.json
 disclosures/
+
+# Agent H research notes (referenced in commits, kept local-only since
+# they include the candidate research process + raw target URLs)
+.agents/
 # baselines/ IS tracked — snapshot of audit surfaces at a point in time,
 # so future sweeps can diff against them and catch silent changes
 # (new tools, widened permissions, description edits = "rug pulls").

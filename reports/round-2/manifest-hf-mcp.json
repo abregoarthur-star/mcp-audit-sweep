@@ -1,0 +1,9 @@
+{
+  "server": {
+    "name": "hf-mcp",
+    "source": "round-2-sources/hf-mcp/packages/mcp/src"
+  },
+  "tools": [],
+  "resources": [],
+  "prompts": []
+}
